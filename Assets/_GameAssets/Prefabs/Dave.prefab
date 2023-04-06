@@ -164,6 +164,9 @@ MonoBehaviour:
     m_Bits: 1
   grounded: 0
   hitTop: 0
+  hitLeft: 0
+  hitRight: 0
+  groundRays: 5
 --- !u!114 &6593880547490846668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,9 +179,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f52a5b3e982dae4ea73f520529daccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveAcceleration: 20
+  maxSpeed: 5
   gravity: 10
-  jumpyForce: 5
+  jumpForce: 3
+  stopDragMultiplier: 20
+  wallJumpAngle: 45
+  wallJumpForce: 5
 --- !u!50 &6593880547490846671
 Rigidbody2D:
   serializedVersion: 4
@@ -196,7 +203,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
