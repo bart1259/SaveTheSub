@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(MovmentController))]
 public class PlayerController : MonoBehaviour
 {
+    public delegate void PlayerDieEventHandler();
+    public event PlayerDieEventHandler OnPlayerDie;
+
     public float moveAcceleration = 2.0f;
     public float maxSpeed = 3.0f;
     public float gravity = 5.0f;
@@ -14,15 +17,20 @@ public class PlayerController : MonoBehaviour
     public float wallJumpAngle = 45.0f;
     public float wallJumpForce = 5.0f;
 
+    public int maxHP = 5;
+
     private float ySpeed = 0;
     private float xSpeed = 0;
     private MovmentController movmentController;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
+    private int hp;
+
     // Start is called before the first frame update
     void Start()
     {
+        hp = maxHP;
         animator = GetComponentsInChildren<Animator>()[0];
         spriteRenderer = GetComponentsInChildren<SpriteRenderer>()[0];
         movmentController = GetComponent<MovmentController>();
@@ -99,5 +107,21 @@ public class PlayerController : MonoBehaviour
         Vector2 moveVector = new Vector2(xSpeed, ySpeed) * Time.deltaTime;
 
         movmentController.Move(moveVector);
+    }
+
+    public void TakeDamage(int amount) {
+        hp -= amount;
+        if(hp < 0) {
+            Die();
+        }
+    }
+
+    public void Die() {
+        xSpeed = 0.0f;
+        ySpeed = 0.0f;
+
+        if(OnPlayerDie != null) {
+            OnPlayerDie();
+        }
     }
 }
