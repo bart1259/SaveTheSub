@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     private int hp;
+    private bool spaceHit = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,10 @@ public class PlayerController : MonoBehaviour
         }
         if(xSpeed > 0) {
             spriteRenderer.flipX = false;
+        }
+
+        if(Input.GetKeyDown("space")) {
+            spaceHit = true;
         }
 
         // Update animation states
@@ -90,16 +95,17 @@ public class PlayerController : MonoBehaviour
         }
         ySpeed -= gravity * Time.deltaTime;
 
-        if (movmentController.grounded && Input.GetKey("space")) {
-            ySpeed += jumpForce;
+        if (movmentController.grounded && spaceHit) {
+            // Jump
+            ySpeed = jumpForce;
         }
-
-        // Wall jump
-        if (movmentController.hitLeft && Input.GetKey("space")) {
+        else if (movmentController.hitLeft && spaceHit && horizontalInput < -0.1f) {
+            // Wall Jump
             ySpeed = wallJumpForce * Mathf.Sin(Mathf.Deg2Rad * wallJumpAngle);
             xSpeed = wallJumpForce * Mathf.Cos(Mathf.Deg2Rad * wallJumpAngle);
         }
-        if (movmentController.hitRight && Input.GetKey("space")) {
+        else if (movmentController.hitRight && spaceHit && horizontalInput > 0.1f) {
+            // Wall Jump
             ySpeed = wallJumpForce * Mathf.Sin(Mathf.Deg2Rad * wallJumpAngle);
             xSpeed = -wallJumpForce * Mathf.Cos(Mathf.Deg2Rad * wallJumpAngle);
         }
@@ -107,6 +113,7 @@ public class PlayerController : MonoBehaviour
         Vector2 moveVector = new Vector2(xSpeed, ySpeed) * Time.deltaTime;
 
         movmentController.Move(moveVector);
+        spaceHit = false;
     }
 
     public void TakeDamage(int amount) {
