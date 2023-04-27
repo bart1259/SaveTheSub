@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [RequireComponent(typeof(MovmentController))]
 public class PlayerController : MonoBehaviour
@@ -24,6 +25,9 @@ public class PlayerController : MonoBehaviour
     private MovmentController movmentController;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private AudioSource jumpSound;
+    private AudioSource deathSound;
+    private AudioSource[] sounds;
 
     private int hp;
     private bool spaceHit = false;
@@ -35,6 +39,9 @@ public class PlayerController : MonoBehaviour
         animator = GetComponentsInChildren<Animator>()[0];
         spriteRenderer = GetComponentsInChildren<SpriteRenderer>()[0];
         movmentController = GetComponent<MovmentController>();
+        sounds = GetComponents<AudioSource>();
+        jumpSound = sounds[0];
+        deathSound = sounds[1];
     }
 
     void Update() {
@@ -98,6 +105,7 @@ public class PlayerController : MonoBehaviour
         if (movmentController.grounded && spaceHit) {
             // Jump
             ySpeed = jumpForce;
+            jumpSound.Play();
         }
         else if (movmentController.hitLeft && spaceHit && horizontalInput < -0.1f) {
             // Wall Jump
@@ -126,7 +134,7 @@ public class PlayerController : MonoBehaviour
     public void Die() {
         xSpeed = 0.0f;
         ySpeed = 0.0f;
-
+        deathSound.Play();
         if(OnPlayerDie != null) {
             OnPlayerDie();
         }
