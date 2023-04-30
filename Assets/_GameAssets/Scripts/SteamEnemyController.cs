@@ -9,6 +9,7 @@ public class SteamEnemyController : MonoBehaviour
 
     public new ParticleSystem particleSystem;
     public Collider2D damageCollider;
+    private AudioSource bubbleSound;
 
     private float timer;
     private bool on = false;
@@ -17,6 +18,7 @@ public class SteamEnemyController : MonoBehaviour
     void Start()
     {
         timer = offTime / 2.0f;
+        bubbleSound = GetComponents<AudioSource>()[0];
     }
 
     // Update is called once per frame
@@ -38,11 +40,13 @@ public class SteamEnemyController : MonoBehaviour
         on = false;
         particleSystem.Stop();
         damageCollider.gameObject.SetActive(false);
+        bubbleSound.Stop();
     }
 
     void TurnOn() {
         on = true;
         particleSystem.Play();
         damageCollider.gameObject.SetActive(true);
+        bubbleSound.Play();
     }
 }
