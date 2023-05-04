@@ -8,11 +8,12 @@ public class DialogSystem : MonoBehaviour
 
     public GameObject graphicsGO;
     public TMP_Text speechText;
-    public float secondsPerWord = 0.2f;
+    public float secondsPerChar = 0.05f;
+    public float secondsPerPunctuation = 0.2f;
 
     private float timer;
     private string fullText;
-    private string[] words;
+    private string words;
     private int wordIndex = 0;
     private bool active = false;
     private bool animating = false;
@@ -39,10 +40,15 @@ public class DialogSystem : MonoBehaviour
                 timer -= Time.deltaTime;
                 if (timer < 0) {
                     // Add next word
-                    speechText.text += words[wordIndex] + " ";
+                    speechText.text += words[wordIndex] ;
 
                     // reset timer
-                    timer = secondsPerWord;
+                    if (words[wordIndex] == '.' || words[wordIndex] == '?' || words[wordIndex] == '!')
+                    {
+                        timer = secondsPerPunctuation;
+                    } else {
+                        timer = secondsPerChar;
+                    }
 
                     wordIndex += 1;
                     if (wordIndex >= words.Length) {
@@ -72,11 +78,11 @@ public class DialogSystem : MonoBehaviour
     public void StartDialog(string text) {
         speechText.text = "";
          
-        words = text.Split(" ");
+        words = text;
         fullText = text;
         wordIndex = 0;
 
-        timer = secondsPerWord;
+        timer = secondsPerChar;
 
         active = true;
         animating = true;

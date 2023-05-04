@@ -16882,6 +16882,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 6721895464271078151, guid: 9a36b821e8babf34fa8c8963c832aaa7, type: 3}
+      propertyPath: secondsPerWord
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6721895464271078151, guid: 9a36b821e8babf34fa8c8963c832aaa7, type: 3}
+      propertyPath: secondsPerPunctuation
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6721895466061664881, guid: 9a36b821e8babf34fa8c8963c832aaa7, type: 3}
       propertyPath: m_IsActive
       value: 0
