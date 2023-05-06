@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SteamEnemyController : MonoBehaviour
 {
+
+    public float offset = 0.0f;
     public float offTime = 3.0f;
     public float onTime = 0.5f;
 
@@ -12,12 +14,12 @@ public class SteamEnemyController : MonoBehaviour
     private AudioSource bubbleSound;
 
     private float timer;
-    private bool on = false;
+    public bool on = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        timer = offTime / 2.0f;
+        timer = offset;
         bubbleSound = GetComponents<AudioSource>()[0];
     }
 
@@ -27,23 +29,23 @@ public class SteamEnemyController : MonoBehaviour
         
         timer -= Time.deltaTime;
         if (on && timer < 0.0f) {
-            timer = offTime;
             TurnOff();
         }
         if (!on && timer < 0.0f) {
-            timer = onTime;
             TurnOn();
         }
     }
 
-    void TurnOff() {
+    public void TurnOff() {
+        timer = offTime;
         on = false;
         particleSystem.Stop();
         damageCollider.gameObject.SetActive(false);
         bubbleSound.Stop();
     }
 
-    void TurnOn() {
+    public void TurnOn() {
+        timer = onTime;
         on = true;
         particleSystem.Play();
         damageCollider.gameObject.SetActive(true);
