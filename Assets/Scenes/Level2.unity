@@ -16884,6 +16884,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1416770387}
     m_Modifications:
+    - target: {fileID: 1078931939511487765, guid: ce88f261ff93eff43b6fcd1a53783d4f, type: 3}
+      propertyPath: hasWrench
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1078931939511487766, guid: ce88f261ff93eff43b6fcd1a53783d4f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
