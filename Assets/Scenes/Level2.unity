@@ -19220,11 +19220,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6593880547490846666, guid: 0e9242f906570ee44ae3e3096fe05e03, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 70.38
+      value: -16.73
       objectReference: {fileID: 0}
     - target: {fileID: 6593880547490846666, guid: 0e9242f906570ee44ae3e3096fe05e03, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.69
+      value: -1.68
       objectReference: {fileID: 0}
     - target: {fileID: 6593880547490846666, guid: 0e9242f906570ee44ae3e3096fe05e03, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19813,6 +19813,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 479e2e38966795243b92445edf097678, type: 3}
+--- !u!1001 &1912448194
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5295917072702189824, guid: 02fda804cf146134a8eb7e090fdb9b7f, type: 3}
+      propertyPath: m_Name
+      value: DialogTrigger (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295917072702189829, guid: 02fda804cf146134a8eb7e090fdb9b7f, type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295917072702189829, guid: 02fda804cf146134a8eb7e090fdb9b7f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 39.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295917072702189829, guid: 02fda804cf146134a8eb7e090fdb9b7f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295917072702189829, guid: 02fda804cf146134a8eb7e090fdb9b7f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295917072702189829, guid: 02fda804cf146134a8eb7e090fdb9b7f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295917072702189829, guid: 02fda804cf146134a8eb7e090fdb9b7f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295917072702189829, guid: 02fda804cf146134a8eb7e090fdb9b7f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295917072702189829, guid: 02fda804cf146134a8eb7e090fdb9b7f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295917072702189829, guid: 02fda804cf146134a8eb7e090fdb9b7f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295917072702189829, guid: 02fda804cf146134a8eb7e090fdb9b7f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295917072702189829, guid: 02fda804cf146134a8eb7e090fdb9b7f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295917072702189831, guid: 02fda804cf146134a8eb7e090fdb9b7f, type: 3}
+      propertyPath: dialog
+      value: That eel acid looks dangerous. I hope it doesn't start rising.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 02fda804cf146134a8eb7e090fdb9b7f, type: 3}
 --- !u!1001 &2098767388
 PrefabInstance:
   m_ObjectHideFlags: 0
