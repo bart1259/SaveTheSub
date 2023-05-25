@@ -18844,7 +18844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06be9653c68ddab4b9d0277a66b21d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: MainMenu
+  sceneName: Credits
 --- !u!61 &691443848
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19220,11 +19220,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6593880547490846666, guid: 0e9242f906570ee44ae3e3096fe05e03, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.73
+      value: -17.17
       objectReference: {fileID: 0}
     - target: {fileID: 6593880547490846666, guid: 0e9242f906570ee44ae3e3096fe05e03, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.68
+      value: -2.55
       objectReference: {fileID: 0}
     - target: {fileID: 6593880547490846666, guid: 0e9242f906570ee44ae3e3096fe05e03, type: 3}
       propertyPath: m_LocalPosition.z
